@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package Chat;
+
+service ChatRoom {
+  rpc Join (stream MessageIn) returns (stream MessageOut) {}
+}
+
+message MessageIn {
+  string username = 1;
+  string content = 2;
+}
+
+message MessageOut {
+  google.protobuf.Timestamp timestamp = 1;
+  string username = 2;
+  string content = 3;
+}
