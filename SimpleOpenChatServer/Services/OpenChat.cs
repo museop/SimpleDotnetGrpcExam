@@ -29,7 +29,6 @@ public class OpenChat
 
     public async Task BroadcastMessageAsync(MessageIn messageIn)
     {
-        var timestamp = Timestamp.FromDateTime(DateTime.UtcNow);
         var messageOut = new MessageOut
         {
             Timestamp = Timestamp.FromDateTime(DateTime.UtcNow),
